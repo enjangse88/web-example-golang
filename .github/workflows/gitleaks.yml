@@ -1,13 +1,14 @@
-name: gitleaks
+name: Gitleaks
 
 on:
   push:
     branches: 
        - main
-       - Staging
+       - staging
   pull_request:
     branches: 
-       - main  
+       - main
+       - staging  
  
 
 jobs:
@@ -15,5 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: gitleaks-action
+    - name: gitleaks-action-checking-key
       uses: zricethezav/gitleaks-action@master
