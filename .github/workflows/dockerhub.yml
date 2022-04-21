@@ -1,13 +1,14 @@
 name: "Push Docker image to DockerHub"
 #buat ngetest docker hub 
 #test push image
+
 on:
   push:
-    branches:
-       - main
-       - staging
-  pull_request:
-       - main
+    branches: [ main ]
+            #     - main
+            # - staging
+            #pull_request:
+          #   - main
 
 jobs:
   push_to_registry:
