@@ -1,5 +1,4 @@
-
-name: Auto create Pull Request 
+name: "Auto create Pull Request"
 on:
   push:
     branches:

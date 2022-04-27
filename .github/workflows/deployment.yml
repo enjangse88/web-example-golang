@@ -1,6 +1,4 @@
 name: "Push Docker image to DockerHub"
-#buat ngetest docker hub 
-#test push image
 
 on:
   push:
