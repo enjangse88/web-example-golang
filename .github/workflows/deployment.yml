@@ -21,17 +21,17 @@ jobs:
       - name: Publish docker image
         run: |
           echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
-          docker build -t enjangse/vulnerableapp:latest .
-          docker push enjangse/vulnerableapp:latest
+          docker build -t enjangse/goapp:tugasbesar .
+          docker push enjangse/goapp:tugasbesar
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with: 
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/kucing/Vulnerability-goapp
+            cd /home/enjang/web-example-golang
             ls -lah
-            docker rm -f vulnapp-goapp && docker rmi enjangse/vulnerableapp:latest
+            docker rm -f goapp && docker rmi enjangse/goapp:tugasbesar
             docker-compose -f docker-compose.yml up -d
