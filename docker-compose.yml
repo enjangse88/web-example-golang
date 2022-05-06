@@ -1,6 +1,8 @@
-version: '3'
+version: "2"
 services:
-    web-go:
-        build: .
-        ports:
-            - 8080:8080
+    goapp:
+      image: enjangse/goapp:tugasbesar
+      ports:
+         - 80:8080
+      container_name: cyberacademyT1
+
